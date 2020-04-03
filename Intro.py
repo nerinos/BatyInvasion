@@ -9,13 +9,7 @@ green = (0, 128, 0)
 
 
 def choosedef(winx, winy, window):
-    if winx == 1440 and winy == 900:
-        intro_bg = pygame.image.load('mac-bg.jpg')
-    elif winx == 1920 and winy == 1080:
-        intro_bg = pygame.image.load('fullhd-bg.jpg')
-    elif winx == 1336 and winy == 768:
-        intro_bg = pygame.image.load('1336x768.jpg')
-    return intro_bg
+    return pygame.image.load('fullhd-bg.jpg')
 
 
 def game_intro(winx, winy, window):

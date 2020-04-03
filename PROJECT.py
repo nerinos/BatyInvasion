@@ -12,19 +12,25 @@ white = (255, 255, 255)
 red = (255, 0, 0)
 green = (0, 128, 0)
 
-winx = 1440
-winy = 900
+
 pygame.init()
 pygame.mixer.init(44100, 16, 2, 4096)
 window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+infoObject = pygame.display.Info()
+winx, winy = infoObject.current_w, infoObject.current_h
+
+picture = pygame.image.load('background1.jpg')
+bg = pygame.transform.scale(picture, (winx, winy))
+
 pygame.display.set_caption("Baty invasion")
 
 pygame.mixer.music.load("Sounds/Songfinal.ogg")
 pygame.mixer.music.set_volume(0.5)
-if winx == 1920 and winy == 1080:
-    bg = pygame.image.load('background1.jpg').convert_alpha()
-elif winx == 1440 and winy == 900:
-    bg = pygame.image.load('mac1.jpg').convert_alpha()
+
+#if winx == 1920 and winy == 1080:
+#    bg = pygame.image.load('background1.jpg').convert_alpha()
+#elif winx == 1440 and winy == 900:
+#    bg = pygame.image.load('mac1.jpg').convert_alpha()
 clock = pygame.time.Clock()
 swordswing = pygame.mixer.Sound('Sounds/swing.ogg')
 punch = pygame.mixer.Sound('Sounds/punch.ogg')
